@@ -52,8 +52,8 @@ a {
   justify-content: space-between;
 }
 .logo {
-  font-family: 'Wish List', cursive;
-  font-size: 5vmin;
+  font-family: 'Londrina Shadow', cursive;
+  font-size: 40px;
   width: 200px;
 }
 .nav__btn{
@@ -108,7 +108,7 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  color: #222222;
   text-decoration: none;
   user-select: none;
   background: #FFFFFF;
@@ -134,7 +134,9 @@ a {
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
+
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
