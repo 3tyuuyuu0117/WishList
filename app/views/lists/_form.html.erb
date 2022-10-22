@@ -1,7 +1,7 @@
 <%= form_with model: list, local: true do |f|%>
   <div class="field">
     <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title, id:"list_title" %>
+    <%= f.text_field :title %>
   </div>
 
   <%# <div class="field">
@@ -11,12 +11,12 @@
 
   <div class="field">
     <%= f.label :detail, "詳細" %><br />
-    <%= f.text_area :detail, class: :form__text, id:"prototype_concept" %>
+    <%= f.text_area :detail, class: :form__text %>
   </div>
 
   <div class="field">
     <%= f.label :image, "画像" %><br />
-    <%= f.file_field :image, id:"prototype_image" %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">
