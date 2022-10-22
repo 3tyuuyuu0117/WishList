@@ -169,27 +169,27 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.list__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.list__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.prototype__user{
+.list__user{
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.list__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.list__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -199,12 +199,12 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.list__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+.list__btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -216,7 +216,7 @@ a {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
+.list__btn:hover{
   color: #fff;
   background: #999;
 }

@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="form__wrapper">
       <h2 class="page-heading">目標・やりたいこと</h2>
-        <%# 部分テンプレートでフォームを表示する %>
+      <%= render partial: "form", locals: { list: @list } %>
     </div>
   </div>
 </div>

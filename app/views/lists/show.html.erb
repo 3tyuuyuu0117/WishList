@@ -1,27 +1,27 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="list__wrapper">
+      <p class="list__hedding">
         <%= "プロトタイプのタイトル"%>
       </p>
-      <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %>
+      <%= link_to "by #{current_user.nickname}", root_path, class: :list__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+        <div class="list__manage">
+          <%= link_to "編集する", root_path, class: :list__btn %>
+          <%= link_to "削除する", root_path, class: :list__btn %>
         </div>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
+      <div class="list__image">
         <%= image_tag "プロトタイプの画像" %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+      <div class="list__body">
+        <div class="list__detail">
           <p class="detail__title">キャッチコピー</p>
           <p class="detail__message">
             <%= "プロトタイプのキャッチコピー" %>
           </p>
         </div>
-        <div class="prototype__detail">
+        <div class="list__detail">
           <p class="detail__title">コンセプト</p>
           <p class="detail__message">
             <%= "プロトタイプのコンセプト" %>
