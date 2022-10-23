@@ -2,43 +2,43 @@
   <div class="inner">
     <div class="list__wrapper">
       <p class="list__hedding">
-        <%= "プロトタイプのタイトル"%>
+        <%= @list.title%>
       </p>
-      <%= link_to "by #{current_user.nickname}", root_path, class: :list__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <%= link_to "by #{current_user.nickname}", user_path(@list.user), class: :list__user %>
+      <% if user_signed_in? && current_user.id == @list.user_id %>
         <div class="list__manage">
-          <%= link_to "編集する", root_path, class: :list__btn %>
+          <%= link_to "編集する", edit_list_path(@list.id), class: :list__btn %>
           <%= link_to "削除する", root_path, class: :list__btn %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <% end %>
       <div class="list__image">
-        <%= image_tag "プロトタイプの画像" %>
+        <%= image_tag @list.image %>
       </div>
-      <div class="list__body">
+      <%# <div class="list__body">
         <div class="list__detail">
           <p class="detail__title">キャッチコピー</p>
           <p class="detail__message">
             <%= "プロトタイプのキャッチコピー" %>
-          </p>
-        </div>
+          <%# </p>
+        </div> %>
         <div class="list__detail">
-          <p class="detail__title">コンセプト</p>
+          <p class="detail__title">詳細</p>
           <p class="detail__message">
-            <%= "プロトタイプのコンセプト" %>
+            <%= @list.detail %>
           </p>
         </div>
       </div>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with model: モデル名,local: true do |f|%>
-            <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
+        <%# <% if user_signed_in? %>
+            <%# <%= form_with model: list,local: true do |f|%>
+            <%# <div class="field">
+              <%= f.label :hoge, "コメント" %><br />
               <%# <%= f.text_field :hoge, id:"comment_content" %>
-            </div>
-            <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <%# <% end %>
+            <%# </div> %>
+            <%# <div class="actions"> %>
+              <%# <%= f.submit "送信する", class: :form__btn  %> %>
+            <%# </div> %>
+            <%# <% end %> 
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>

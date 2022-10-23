@@ -1,10 +1,10 @@
 <div class="card">
-  <%= link_to image_tag(list.image, class: :card__img ), root_path%>
+  <%= link_to image_tag(list.image, class: :card__img ), list_path(list) %>
   <div class="card__body">
-    <%= link_to list.title, root_path, class: :card__title%>
+    <%= link_to list.title, list_path(list), class: :card__title%>
     <p class="card__summary">
-      <%= "詳細" %>
+      <%= list.detail %>
     </p>
-    <%= link_to "by #{current_user.nickname}", root_path, class: :card__user %>
+    <%# <%= link_to "by #{list.user.nickname}", user_path(list.user), class: :card__user %> 
   </div>
 </div>
