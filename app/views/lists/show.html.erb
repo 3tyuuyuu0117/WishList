@@ -7,8 +7,8 @@
       <%= link_to "by #{current_user.nickname}", user_path(@list.user), class: :list__user %>
       <% if user_signed_in? && current_user.id == @list.user_id %>
         <div class="list__manage">
-          <%= link_to "編集する", edit_list_path(@list.id), class: :list__btn %>
-          <%= link_to "削除する", root_path, class: :list__btn %>
+          <%= link_to "編集する", edit_list_path(@list), class: :list__btn %>
+          <%= link_to "削除する", list_path(@list), class: :list__btn %>
         </div>
       <% end %>
       <div class="list__image">
