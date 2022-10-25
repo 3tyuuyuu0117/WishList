@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_action :set_tlist, only: [:show, :edit, :update]
+
 
   def index
     @lists = List.includes(:user)
@@ -18,19 +20,26 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
   end
   
   def edit
   end
 
-  def show
+  def update
+    if @list.update(list_params)
+      redirect_to list_path(@list)
+    else
+      render :edit
+    end
   end
-  
 
   private
 
   def list_params
     params.require(:list).permit(:title, :detail, :image).merge(user_id: current_user.id)
+  end
+
+  def set_list
+    @list = List.find(params[:id])
   end
 end
